@@ -1,21 +1,50 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Route } from 'react-router-dom';
+
+import * as Pages from './pages';
+
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      loggedIn: false,
+    }
+  }
+
+  componentWillMount() {
+    if (localStorage.getItem('uuID')) {
+      this.setState({loggedIn: true});
+    } else {
+      this.setState({loggedIn: false});
+    }
+  }
+
+  logout() {
+    localStorage.setItem('uuID', '');
+    window.location = '/';
+  }
+
   render() {
+    const { loggedIn } = this.state;
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <div>
+        <div>
+          <h3>Hello World!</h3>
+          { loggedIn ? 
+            <div className="Inline-button">
+              <button 
+                className="btn btn-primary btn-sm"
+                onClick={this.logout}
+              >
+              </button>
+            </div> : null
+          }
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Route path="/" exact component={Pages.Login}></Route>
       </div>
-    );
+    )
   }
 }
-
 export default App;
