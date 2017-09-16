@@ -1,0 +1,26 @@
+{
+  "name": "photo-site",
+  "version": "1.0.0",
+  "description": "\"simple photo viewing site\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwinslow123/photo-site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dwinslow123/photo-site/issues"
+  },
+  "homepage": "https://github.com/dwinslow123/photo-site#readme",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.11"
+  }
+}
