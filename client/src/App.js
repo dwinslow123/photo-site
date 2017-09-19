@@ -29,9 +29,8 @@ class App extends Component {
   render() {
     const { loggedIn } = this.state;
     return (
-      <div>
+      <div className="wrapper">
         <div>
-          <h3>Hello World!</h3>
           { loggedIn ? 
             <div className="Inline-button">
               <button 
@@ -43,6 +42,10 @@ class App extends Component {
           }
         </div>
         <Route path="/" exact component={Pages.Login}></Route>
+        <Route path="/create-user" component={Pages.CreateAccount}></Route>
+        <Route path="/photos" exact component={Pages.Photos}></Route>
+        <Route path="/photos/:id" component={Pages.SinglePhoto}></Route>
+        <Route path="/new-photo" component={Pages.AddPhoto}></Route>
       </div>
     )
   }

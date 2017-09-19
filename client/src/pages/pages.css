@@ -1,0 +1,33 @@
+.container {
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Login-form {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 2rem 0.5rem 2rem 0.5rem;
+}
+
+.Login-group {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.Login-group button {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.form-control {
+  text-align: center;
+}
