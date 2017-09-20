@@ -9,7 +9,7 @@ export default class Login extends Component {
     super();
     this.state = {
       username: '',
-      password: '',
+      password: ''
     }
     this.logInWithUser = this.logInWithUser.bind(this);
     this.updateUsername = this.updateUsername.bind(this);
