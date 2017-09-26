@@ -1,13 +1,13 @@
 import Login from './Login';
 import CreateAccount from './CreateAccount';
-import Photos from './Photos';
-import SinglePhoto from './SinglePhoto';
-import AddPhoto from './AddPhoto';
+import BlogPosts from './BlogPosts';
+import SinglePost from './SinglePost';
+import AddPost from './AddPost';
 
 export {
   Login,
   CreateAccount,
-  Photos,
-  SinglePhoto,
-  AddPhoto
+  BlogPosts,
+  SinglePost,
+  AddPost,
 };

@@ -3,16 +3,16 @@ import axios from 'axios';
 import { FormGroup, FormControl } from 'react-bootstrap';
 import './pages.css';
 
-export default class AddPhoto extends Component {
+export default class AddPost extends Component {
   constructor() {
     super();
     this.state = {
       title: '',
-      content: undefined
+      content: '',
     }
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleContent = this.handleContent.bind(this);
-    this.submitPhoto = this.submitPhoto.bind(this);
+    this.submitPost = this.submitPost.bind(this);
   }
 
   handleTitleChange(e) {
@@ -21,12 +21,12 @@ export default class AddPhoto extends Component {
   handleContent(e) {
     this.setState({ content: e.target.value })
   }
-  submitPhoto(e) {
+  submitPost(e) {
     e.preventDefault();
     const { title, content } = this.state;
     const newPost = { title, content, author: localStorage.getItem('uuID') };
     this.setState({ title: '', content: '' });
-    axios.post('http://localhost:3030/new-photo', newPost)
+    axios.post('http://localhost:3030/new-post', newPost)
     .then((data) => {
       const newPostID = data.data._id;
       window.location = `/posts/${newPostID}`
@@ -54,12 +54,12 @@ export default class AddPhoto extends Component {
             id="contentForm"
             onChange={this.handleContent}
             placeholder="Content"
-            type="photo"
+            type="text"
             value={this.state.content}
           />
         </FormGroup>
-        <button className="btn btn-sm btn-success SubmitButton" type="submit" onClick={this.submitPhoto}>
-          Submit a photo!
+        <button className="btn btn-sm btn-success SubmitButton" type="submit" onClick={this.submitPost}>
+          Submit a post!
         </button>
       </form>
     );

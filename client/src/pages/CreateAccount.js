@@ -31,11 +31,11 @@ createUser(e) {
   .then((data) => {
     localStorage.setItem('uuID', data.data._id);
     setTimeout(() => {
-      window.location = '/photos';
+      window.location = '/posts';
     }, 200);
   })
   .catch((err) => {
-    console.log({ 'error': err.response.error })
+    console.log(err)
   });
 }
 
@@ -63,15 +63,15 @@ createUser(e) {
             type="password"
             value={this.state.password}
           />
+          <button className="btn btn-default" onClick={this.createUser}>
+            Create Account
+          </button>
           <h3>
             Already a member?
           </h3>
           <Link to="/">
             Login here
           </Link>
-          <button className="btn btn-default" onClick={this.createUser}>
-            Create Account
-          </button>
         </FormGroup>
       </form>
     )

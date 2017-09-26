@@ -41,11 +41,11 @@ class App extends Component {
             </div> : null
           }
         </div>
-        <Route path="/" exact component={Pages.Login}></Route>
-        <Route path="/create-user" component={Pages.CreateAccount}></Route>
-        <Route path="/photos" exact component={Pages.Photos}></Route>
-        <Route path="/photos/:id" component={Pages.SinglePhoto}></Route>
-        <Route path="/new-photo" component={Pages.AddPhoto}></Route>
+        <Route path="/" exact component={ Pages.Login }></Route>
+        <Route path="/create-user" component={ Pages.CreateAccount }></Route>
+        <Route path="/posts" exact component={ Pages.BlogPosts }></Route>
+        <Route path="/posts/:id" component={ Pages.SinglePost }></Route>
+        <Route path="/new-post" component={ Pages.AddPost }></Route>
       </div>
     )
   }
