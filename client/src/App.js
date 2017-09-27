@@ -37,6 +37,7 @@ class App extends Component {
                 className="btn btn-primary btn-sm"
                 onClick={this.logout}
               >
+              Logout
               </button>
             </div> : null
           }

@@ -38,12 +38,12 @@ export default class AddPost extends Component {
 
   render() {
     return (
-      <form clasName="Login-form">
+      <form className="Login-form">
         <FormGroup className="Login-group" controlId="titleForm">
           Title
           <FormControl 
             id="titleForm"
-            onChange={this.handleContent}
+            onChange={this.handleTitleChange}
             placeholder="Title"
             type="text"
             value={this.state.title}

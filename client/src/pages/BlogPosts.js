@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './pages.css';
 
-class BlogPosts extends Component {
+export default class BlogPosts extends Component {
   constructor() {
     super();
     this.state = {
       posts: [
-        { title: '',
-          _id: ''
+        { title: 'This is a fake title',
+          _id: '34593u4eworj'
         },
       ]
     }
@@ -29,10 +29,10 @@ class BlogPosts extends Component {
     const { posts } = this.state;
     return (
       <div>
-        <Link to='/new-post'><button className="btn btn-default btn-sm">Add a new photo!</button></Link>
-        { posts.map((post, i) => {
+        <Link to='/new-post'><button className="btn btn-default btn-sm">Add a new post!</button></Link>
+        { posts.map((post) => {
           return (
-            <div key={i}>
+            <div key={post._id}>
               <Link to={`posts/${post._id}`}>{post.title}</Link>
             </div>
           )
@@ -41,5 +41,3 @@ class BlogPosts extends Component {
     );
   }
 }
-
-export default BlogPosts;

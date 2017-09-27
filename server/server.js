@@ -25,7 +25,7 @@ server.use((req, res, next) => {
   next();
 });
 
-const routes = require('./api/routes/routes');
+const routes = require('../api/routes/routes');
 routes(server);
 
 server.listen(3030, () => {
